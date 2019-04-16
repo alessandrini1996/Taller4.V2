@@ -7,7 +7,7 @@ namespace Servicio
 {
     public interface INterfaceProfesor
     {
-        List<Profesor> ObtenerProfesor();
-        List<Aula> ObtenerAulaDeProfesor(String dni);
+        IEnumerable<Profesor> ObtenerProfesor();
+        IEnumerable<Aula> ObtenerAulaDeProfesor(String dni);
     }
 }

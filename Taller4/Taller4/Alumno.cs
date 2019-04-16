@@ -7,11 +7,11 @@ namespace Dominio
     [Serializable]
     public class Alumno
     {
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string dni { get; set; }
-        public List<Materia> _Materias;
-        public List<Examen> _Examenes;
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Dni { get; set; }
+        private List<Materia> _Materias;
+        private List<Examen> _Examenes;
         readonly Materia materia;
         readonly Examen examen;
 
@@ -37,7 +37,7 @@ namespace Dominio
         {
             if (materia == null)
 
-                throw new Exception("El alumno:" + nombre + "no se encuentra inscripto en esta materia: ");
+                throw new Exception("El alumno:" + Nombre + "," + Apellido +"no se encuentra inscripto en esta materia: ");
 
             _Materias.Remove(materia);
         }
@@ -45,6 +45,11 @@ namespace Dominio
         public void Evaluar(Examen examen)
         {
             _Examenes.Add(examen);
+        }
+
+        public void Evaluar(List<Examen> examenes)
+        {
+            _Examenes.AddRange(examenes);
         }
     }
 }

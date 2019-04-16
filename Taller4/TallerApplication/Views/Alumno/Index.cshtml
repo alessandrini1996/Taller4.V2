@@ -1,0 +1,54 @@
+﻿@model TallerApplication.ViewModel.Alumnos.AlumnosViewModel
+@{
+    ViewBag.Title = "Alumnos";
+}
+
+@section PageScrips{
+    <script type="text/javascript">
+    </script>
+}
+
+<div class="container" id="AlumnoContainer">
+    <h4 class="text-center">
+        Lista de Alumnos
+    </h4>
+    @if (Model.Alumnos.Any())
+    {
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Apellido y Nombre</th>
+                            <th scope="col">DNI</th>
+                            <th scope="col">Edad (Fecha de Nacimiento)</th>
+                            <th scope="col">Cantidad de Materias</th>
+                            <th scope="col">Cantidad de Exámenes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var alumno in Model.Alumnos.OrderBy(alumno => alumno.ApellidoNombre))
+                        {
+                            <tr>
+                                <td>@alumno.ApellidoNombre</td>
+                                <td>@alumno.Dni</td>
+                                <td>@alumno.Edad</td>
+                                <td>@alumno.CantidadMaterias</td>
+                                <td>@alumno.CantidadExamenes - <a href="@Url.Action("Examenes", "Alumnos", new { dni = alumno.Dni })">Ver</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-primary">No se encontraron resultados de alumnos.</div>
+    }
+    {
+
+    }
+</div>
+
+

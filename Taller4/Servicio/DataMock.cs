@@ -31,6 +31,11 @@ namespace Servicio
             var alumno4 = new Alumno("Gabriela", "Gallo", "35789098", new DateTime(1995, 09, 24));
             var alumno5 = new Alumno("Maria", "Felix", "31890345", new DateTime(1994, 12, 24));
             var alumno6 = new Alumno("Walter", "Cruz", "33456987", new DateTime(1999, 03, 31));
+            var alumno7 = new Alumno("Emilia", "Clark", "33456987", new DateTime(1993, 06, 12));
+            var alumno8 = new Alumno("Walter", "Cruz", "33456987", new DateTime(1991, 05, 18));
+            var alumno9 = new Alumno("Walter", "Cruz", "33456987", new DateTime(1997, 10, 06));
+            var alumno10 = new Alumno("Walter", "Cruz", "33456987", new DateTime(1994, 07, 29));
+            var alumno11 = new Alumno("Walter", "Cruz", "33456987", new DateTime(1998, 02, 01));
 
             alumno1.InscribirMateria(materia2);
             alumno2.InscribirMateria(materia4);
@@ -38,6 +43,11 @@ namespace Servicio
             alumno4.InscribirMateria(materia5);
             alumno5.InscribirMateria(materia1);
             alumno6.InscribirMateria(materia5);
+            alumno7.InscribirMateria(materia2);
+            alumno8.InscribirMateria(materia3);
+            alumno9.InscribirMateria(materia4);
+            alumno10.InscribirMateria(materia1);
+            alumno11.InscribirMateria(materia5);
 
             #endregion
 
@@ -73,19 +83,29 @@ namespace Servicio
 
             #region
 
-            var examen1 = new Examen(alumno1, "25/03/2019", 9, materia5);
-            var examen2 = new Examen(alumno2, "29/04/2019", 7, materia4);
-            var examen3 = new Examen(alumno3, "30/03/2019", 3, materia3);
-            var examen4 = new Examen(alumno4, "01/04/2019", 6, materia2);
-            var examen5 = new Examen(alumno5, "10/04/2019", 8, materia1);
-            var examen6 = new Examen(alumno6, "21/04/2019", 4, materia1);
+            var examen1 = new Examen(9, new DateTime(2019,03,18),alumno1,materia2);
+            var examen2 = new Examen(7, new DateTime(2019,03,22),alumno2,materia1);
+            var examen3 = new Examen(5, new DateTime(2019,03,29),alumno3,materia4);
+            var examen4 = new Examen(6, new DateTime(2019,04,03),alumno4,materia3);
+            var examen5 = new Examen(2, new DateTime(2019,04,10),alumno1,materia5);
+            var examen6 = new Examen(3, new DateTime(2019,04,17),alumno6,materia1);
+            var examen7 = new Examen(4, new DateTime(2019, 04, 17), alumno2, materia4);
+            var examen8 = new Examen(8, new DateTime(2019, 04, 17), alumno3, materia5);
+            var examen9 = new Examen(9, new DateTime(2019, 04, 17), alumno5, materia2);
+            var examen10 = new Examen(3, new DateTime(2019, 04, 17), alumno5, materia1);
+            var examen11 = new Examen(3, new DateTime(2019, 04, 17), alumno4, materia2);
 
             alumno1.Evaluar(examen2);
             alumno2.Evaluar(examen1);
             alumno3.Evaluar(examen4);
             alumno4.Evaluar(examen6);
             alumno5.Evaluar(examen3);
-            alumno6.Evaluar(examen5);
+            alumno6.Evaluar(examen7);
+            alumno7.Evaluar(examen8);
+            alumno8.Evaluar(examen9);
+            alumno9.Evaluar(examen10);
+            alumno10.Evaluar(examen11);
+            alumno11.Evaluar(examen5);
 
             #endregion
 

@@ -7,17 +7,18 @@ namespace Dominio
     [Serializable]
     public class Examen
     {
-        public string dia { get; set; }
-        public int nota { get; set; }
-        Alumno alumno;
-        Materia materia;
-
-        public Examen(Alumno alumno, string dia, int nota, Materia materia)
+        public float Nota { get; private set; }
+        public DateTime Fecha { get; private set; }
+        public Materia Materia { get; private set; }
+        public Alumno Alumno { get; private set; }
+        
+        public Examen(float nota, DateTime fecha, Alumno alumno, Materia materia)
         {
-            this.alumno = alumno;
-            this.dia = dia;
-            this.nota = nota;
-            this.materia = materia;
+            Nota = nota;
+            Fecha = fecha;
+            Materia = materia;
+            Alumno = alumno;
         }
+        
     }
 }

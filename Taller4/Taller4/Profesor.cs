@@ -9,16 +9,16 @@ namespace Dominio
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Dni { get; set; }
         private readonly List<Materia> _Materias;
         Materia materia;
-        Alumno alumno;
+
+        public string Dni => Dni;
+        
 
         public Profesor(string nombre, string apellido, string dni, Materia materia)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
-            this.Dni = dni;
             this.materia = materia;
         }
 

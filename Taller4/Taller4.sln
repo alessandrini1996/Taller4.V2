@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Taller4\Dominio.csproj", "{DE629DA2-E579-4DFA-9E84-739513FC57D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Taller4\Dominio.csproj", "{DE629DA2-E579-4DFA-9E84-739513FC57D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicio", "Servicio\Servicio.csproj", "{2F0E4798-607B-4051-92A8-8CD71DA3471E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicio", "Servicio\Servicio.csproj", "{2F0E4798-607B-4051-92A8-8CD71DA3471E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallerApplication", "TallerApplication\TallerApplication.csproj", "{0FC88EA4-69AE-4360-A38A-5AD42053B997}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F0E4798-607B-4051-92A8-8CD71DA3471E} = {2F0E4798-607B-4051-92A8-8CD71DA3471E}
+		{DE629DA2-E579-4DFA-9E84-739513FC57D7} = {DE629DA2-E579-4DFA-9E84-739513FC57D7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,10 @@ Global
 		{2F0E4798-607B-4051-92A8-8CD71DA3471E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F0E4798-607B-4051-92A8-8CD71DA3471E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F0E4798-607B-4051-92A8-8CD71DA3471E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC88EA4-69AE-4360-A38A-5AD42053B997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC88EA4-69AE-4360-A38A-5AD42053B997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC88EA4-69AE-4360-A38A-5AD42053B997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC88EA4-69AE-4360-A38A-5AD42053B997}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
