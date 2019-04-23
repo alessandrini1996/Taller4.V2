@@ -1,0 +1,50 @@
+﻿@model  TallerApplication.ViewModels.Profesor.ProfesorViewModel
+
+@{
+    ViewBag.Titel = "Profesores";
+}
+
+@section PageScript{ 
+    <script type="text/javascript">
+     </script>
+}
+
+<div class="Conteiner"  id="ProfesorConteiner">
+    <h4 class="text-center">
+        Lista de profesores
+    </h4>
+    @if (Model.Profesor.Any())
+    {
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Apellido y Nombre</th>
+                            <th scope="col">DNI</th>
+                            <th scope="col">Legajo</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Cantidad de materias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var profesor in Model.Profesores.OrderBy(profesor => profesor.ApellidoNombre))
+                        {
+                        <tr>
+                            <td>@profesor.ApellidoNombre</td>
+                            <td>@profesor.Dni</td>
+                            <td>@profesor.Legajo</td>
+                            <td>@profesor.Edad</td>
+                            <td>@profesor.CantMaterias</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+           </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-primary">No se pudo encontrar el resultado </div>
+    }
+</div>

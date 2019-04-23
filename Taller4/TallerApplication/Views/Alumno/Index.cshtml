@@ -1,4 +1,4 @@
-﻿@model TallerApplication.ViewModel.Alumnos.AlumnosViewModel
+﻿@model  TallerApplication.ViewsModels.Alumno.AlumnoView
 @{
     ViewBag.Title = "Alumnos";
 }
@@ -12,7 +12,7 @@
     <h4 class="text-center">
         Lista de Alumnos
     </h4>
-    @if (Model.Alumnos.Any())
+    @if (Model.Alumno.Any())
     {
         <div class="card">
             <div class="table-responsive">
@@ -27,7 +27,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var alumno in Model.Alumnos.OrderBy(alumno => alumno.ApellidoNombre))
+                        @foreach (var alumno in Model.Alumno.OrderBy(alumno => alumno.ApellidoNombre))
                         {
                             <tr>
                                 <td>@alumno.ApellidoNombre</td>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Dominio
 {
@@ -12,6 +13,8 @@ namespace Dominio
         private readonly List<Materia> _Materias;
         Materia materia;
 
+        public IEnumerable<Materia> Materias => _Materias.AsEnumerable();
+        
         public string Dni => Dni;
         
 

@@ -21,7 +21,7 @@ namespace Servicio
             if (profesor == null)
                 throw new Exception("El profesor no existe.");
 
-            return profesor.Materias.AulaAsignada();
+            return profesor.Materias.(materia => materia.AulaAsignada);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace Servicio
 {
+
     public class SerAlumno : INterfaceAlumno
     {
         public IEnumerable<Alumno> ObtenerAlumnos()
@@ -25,7 +26,7 @@ namespace Servicio
             return alumno.Examenes;
         }
 
-        public IEnumerable<Examen> ObtenerMateriasActivasDelAlumno(string dni)
+        public IEnumerable<Materia> ObtenerMateriasActivasDelAlumno(string dni)
         {
             var alumno = DataMock.Alumnos
                 .FirstOrDefault(x => x.Dni == dni);
@@ -57,10 +58,11 @@ namespace Servicio
             {
                 throw new Exception("El alumno buscado no se encontro");
             }
-            if(alumno.examen.Fecha >= desde && alumno.examen.Fecha <= hasta)
+            if(alumno.Examenes.FirstOrDefault(f => f.Fecha >= desde) == alumno.Examenes.FirstOrDefault( f => f.Fecha <= hasta))
             {
-                return alumno.Examenes.Average(x => x.Nota);
+                throw new Exception("La fecha solicitada no se encontro");
             }
+            return alumno.Examenes.Average(x => x.Nota);
         }
 
         

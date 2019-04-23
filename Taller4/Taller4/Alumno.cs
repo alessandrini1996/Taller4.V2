@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Dominio
 {
@@ -15,7 +16,8 @@ namespace Dominio
         readonly Materia materia;
         readonly Examen examen;
 
-
+        public IEnumerable<Materia> Materias => _Materias.AsEnumerable();
+        public IEnumerable<Examen> Examenes => _Examenes.AsEnumerable();
 
         public Alumno(string dni, string nombre, string apellido, DateTime fechaNacimiento)
         {

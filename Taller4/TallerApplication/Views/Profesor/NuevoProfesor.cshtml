@@ -1,0 +1,57 @@
+﻿@model  TallerApplication.ViewsModel.Profesor.ProfesorView
+
+@{
+    ViewBag.Title = "Alumno Nuevo";
+}
+
+@section PageScripts {
+    <script type="text/javascript">
+        $(function () {
+            var FechaNacimiento = $("#FechaNacimiento");
+            FechaNacimiento.datapiker({
+                format: 'dd/mm/yyyy'
+            });
+        });
+    </script>
+}
+
+<div class="container">
+    <h4 class="text-center">
+        Alumno Nuevo
+    </h4>
+    <div class="row">
+        <div class="col-lg-offset-3 col-lg-6">
+            @using (Html.BeginRouteForm("Profesor_Nuevo", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label for="Dni">DNI</label>
+                    @Html.TextBoxFor(x => x.Dni, new { @class = "form-control", placeholder = "Ingrese Dni" })
+                    @Html.ValidationMessageFor(x => x.Dni, " ", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", placeholder = "Ingrese su nombre" })
+                    @Html.ValidationMessageFor(x => x.Nombre, " ", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="Apellido">Apellido</label>
+                    @Html.TextBoxFor(x => x.Apellido, new { @class = "form-control", placeholder = "Ingrese su apellido" })
+                    @Html.ValidationMessageFor(x => x.Apelldio, " ", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="Legajo">Legajo</label>
+                    @Html.TextBoxFor(x => x.Legajo, new { @class = "form-control", placeholder = "Ingrese su numero de legajo" })
+                    @Html.ValidationMessageFor(x => x.Legajo, " ", new { @class = "text-danger" })
+                </div>
+                @Html.ValidationMessage("", new { @class = "text-danger" })
+                <button type="submit" class="btn btn-dark">
+                    Confirmar
+                </button>
+                <a class="btn btn-outline-dark">
+                    href="@Url.RouteUrl("Alumnos_index")"
+                    Cancelar
+                </a>
+            }
+        </div>
+    </div>
+</div>
