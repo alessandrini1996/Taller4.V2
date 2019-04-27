@@ -136,6 +136,7 @@
     <Compile Include="ViewModels\Alumno\AlumnoNuevoView.cs" />
     <Compile Include="ViewModels\Profesor\AulaView.cs" />
     <Compile Include="ViewModels\Profesor\AulaViewI.cs" />
+    <Compile Include="ViewModels\Profesor\ProfesorNuevoView.cs" />
     <Compile Include="ViewModels\Profesor\ProfesorView.cs" />
     <Compile Include="ViewModels\Profesor\ProfesorViewI.cs" />
     <Compile Include="ViewModels\Home\InfoViews.cs" />

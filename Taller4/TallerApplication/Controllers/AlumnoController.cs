@@ -1,6 +1,8 @@
 ﻿using Servicio;
 using Dominio;
 using System;
+using TallerApplication.ViewModels.Alumno;
+using TallerApplication.ViewModels.Profesor;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,6 +37,7 @@ namespace TallerApplication.Controllers
 
             if (examenes.Any())
                 alumno = examenes.FirstOrderDefault().Alumno;
+
             var model = new ExamenesViewModel()
             {
                 Alumno = alumno,

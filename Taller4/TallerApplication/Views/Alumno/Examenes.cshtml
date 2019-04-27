@@ -1,7 +1,7 @@
-﻿@model TallerApplication.ViewModels.Alumnos.AlumnosView
+﻿@model TallerApplication.ViewModels.Alumno.AlumnosView
 
 @{
-    var nombreAlumno = Model.Alumno == null ? "" : Model.Nobre.Apellido;
+    var nombreAlumno = Model.Alumno == null ? "" : Model.Alumno.NombreApellido;
     ViewBag.Title = $"Examenes del alumno {nombreAlumno}";
 }
 <div class="container" id="AlumnosContainer">
@@ -39,4 +39,11 @@
     {
         <div class="alert alert-primary">No se encontraron resultados de exámenes para el alumno.</div>
     }
+    <div class="row my-6">
+        <div class="col-lg-offset-6">
+            <a class="btn btn-dark from-control" href="@Url.RouteUrl("Alumnos_Index")">
+                Volver a Alumnos
+            </a>
+        </div>
+    </div>
 </div>

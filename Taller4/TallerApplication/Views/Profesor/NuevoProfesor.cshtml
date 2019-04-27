@@ -1,7 +1,7 @@
-﻿@model  TallerApplication.ViewsModel.Profesor.ProfesorView
+﻿@model TallerApplication.ViewModels.Profesor.ProfesorNuevoView
 
 @{
-    ViewBag.Title = "Alumno Nuevo";
+    ViewBag.Title = "Profesor Nuevo";
 }
 
 @section PageScripts {
@@ -17,7 +17,7 @@
 
 <div class="container">
     <h4 class="text-center">
-        Alumno Nuevo
+        Profe
     </h4>
     <div class="row">
         <div class="col-lg-offset-3 col-lg-6">
@@ -48,7 +48,7 @@
                     Confirmar
                 </button>
                 <a class="btn btn-outline-dark">
-                    href="@Url.RouteUrl("Alumnos_index")"
+                    href="@Url.RouteUrl("Profesor_index")"
                     Cancelar
                 </a>
             }

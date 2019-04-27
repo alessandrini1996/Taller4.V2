@@ -19,9 +19,9 @@ namespace Servicio
             var profesor = DataMock.Profesores.FirstOrDefault(x => x.Dni == dni);
 
             if (profesor == null)
-                throw new Exception("El profesor no existe.");
+                throw new Exception("El profesor de esta aula no existe.");
 
-            return profesor.Materias.(materia => materia.AulaAsignada);
+            return profesor.Materias.Select(x => x.AulaAsignada);
         }
     }
 }
