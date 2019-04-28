@@ -134,6 +134,8 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Alumno\AlumnoNuevoView.cs" />
+    <Compile Include="ViewModels\Alumno\PromedioRangoView.cs" />
+    <Compile Include="ViewModels\Alumno\PromedioView.cs" />
     <Compile Include="ViewModels\Profesor\AulaView.cs" />
     <Compile Include="ViewModels\Profesor\AulaViewI.cs" />
     <Compile Include="ViewModels\Profesor\ProfesorNuevoView.cs" />

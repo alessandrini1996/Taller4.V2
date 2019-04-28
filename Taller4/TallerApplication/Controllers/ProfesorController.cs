@@ -3,16 +3,14 @@ using Servicio;
 using Dominio;
 using TallerApplication.ViewModels.Alumno;
 using TallerApplication.ViewModels.Profesor;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace TallerApplication.Controllers
 {
     public class ProfesorController : Controller
     {
-        private readonly SerProfesor _SerProfesor;
+        private readonly INterfaceProfesor _SerProfesor;
 
         public ProfesorController()
         {
@@ -45,8 +43,5 @@ namespace TallerApplication.Controllers
 
             return View(model);
         }
-        //decimal? ObtenerPromedioPorAlumno(string dni);
-        //decimal? ObtenerPromedioEnRangoDeFechasPorAlumno(string dni, DateTime desde, DateTime hasta);
-        //IEnumerable<Materia> ObtenerMateriasActivasPorAlumno(string dni);
     }
 }

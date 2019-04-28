@@ -3,11 +3,8 @@ using Dominio;
 using System;
 using TallerApplication.ViewModels.Alumno;
 using TallerApplication.ViewModels.Profesor;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Linq;
 
 namespace TallerApplication.Controllers
 {
@@ -18,7 +15,6 @@ namespace TallerApplication.Controllers
         {
             _SerAlumno = new SerAlumno();
         }
-
         // GET: Alumno
         [HttpGet]
         public ActionResult Index()
@@ -38,12 +34,43 @@ namespace TallerApplication.Controllers
             if (examenes.Any())
                 alumno = examenes.FirstOrderDefault().Alumno;
 
-            var model = new ExamenesViewModel()
+            var model = new ExamenesView()
             {
                 Alumno = alumno,
                 Examen = examenes
             };
             return View(model);
         }
+
+        public ActionResult Promedio(string dni)
+        {
+            var promedios = _SerAlumno.ObtenerPromedioPorAlumno(dni);
+            Alumno alumno = null;
+
+            if (promedios.Any())
+                alumno = promedios.FirstOrderDefault().Alumno;
+
+            var model = new PromediosView()
+            {
+                Alumno = alumno,
+                Promedio = promedios
+            };
+            return View(model);
+        }
+        public ActionResult PromedioPorRango (string dni, DateTime desde, DateTime hasta)
+        {
+            var promedioPorRango = _SerAlumno.ObtenerPromedioPorFechasDeAlumno(dni, hasta, desde);
+            Alumno alumno = null;
+
+            var model = new PromedioRangoView()
+            {
+                Alumno = alumno,
+                PromedioPorRango = promedioPorRango
+            };
+            return View(model);
+        }
+        //decimal? ObtenerPromedioPorAlumno(string dni);
+        //decimal? ObtenerPromedioEnRangoDeFechasPorAlumno(string dni, DateTime desde, DateTime hasta);
+        //IEnumerable<Materia> ObtenerMateriasActivasPorAlumno(string dni);
     }
 }
