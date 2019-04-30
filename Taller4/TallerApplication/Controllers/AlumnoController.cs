@@ -69,6 +69,18 @@ namespace TallerApplication.Controllers
             };
             return View(model);
         }
+        public ActionResult MateriaActiva (string dni)
+        {
+            var materiasActivas = _SerAlumno.ObtenerMateriasActivasDelAlumno(dni);
+            Alumno alumno = null;
+
+            var model = new MateriaActivaView()
+            {
+                Alumno = alumno,
+                MateriaActiva = materiasActivas
+            };
+            return View(model);
+        }
         //decimal? ObtenerPromedioPorAlumno(string dni);
         //decimal? ObtenerPromedioEnRangoDeFechasPorAlumno(string dni, DateTime desde, DateTime hasta);
         //IEnumerable<Materia> ObtenerMateriasActivasPorAlumno(string dni);
